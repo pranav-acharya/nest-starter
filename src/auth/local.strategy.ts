@@ -9,7 +9,8 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     // Local strategy by default accepts 'username' and 'password'
     // Since these fields might not be defined, we can pass in custom config
     // More info on http://www.passportjs.org/docs/configure/
-    super({ usernameField: 'email' });
+    // super({ usernameField: 'email' });
+    super();
   }
 
   async validate(username: string, password: string): Promise<any> {
