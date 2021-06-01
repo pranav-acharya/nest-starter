@@ -13,6 +13,7 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     super();
   }
 
+  // validate method is required, this will be called on triggering the guard
   async validate(username: string, password: string): Promise<any> {
     const user = await this.authService.validateUser(username, password);
     if (!user) {
