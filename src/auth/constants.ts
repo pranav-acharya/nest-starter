@@ -5,3 +5,7 @@ export const jwtConstants = {
     // a secrets vault, environment variable, or configuration service.
     secret: 'secretKey',
 };
+
+export const bcryptConstants = {
+    saltOrRounds: 10,
+};
