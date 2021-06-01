@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './entities/user.entity';
 import { UsersService } from './users.service';
 
@@ -18,9 +19,12 @@ describe('UsersService', () => {
   });
 
   it('create user', async () => {
-    const user: User = {
+    const user: CreateUserDto = {
       firstName: "Pranav",
-      lastName: "Acharya"
+      lastName: "Acharya",
+      username: "pranav.acharya@test.com",
+      email: "pranav.acharya@test.com",
+      password: "randomPassword",
     };
     service.create(user);
 

@@ -20,8 +20,12 @@ export class UsersService {
     return this.usersRepository.save(user);
   }
 
-  findOne(id: string): Promise<User> {
+  findById(id: string): Promise<User> {
     return this.usersRepository.findOne(id);
+  }
+
+  findOne(options: Partial<User>): Promise<User> {
+    return this.usersRepository.findOne(options);
   }
 
   async remove(id: string): Promise<void> {

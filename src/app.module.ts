@@ -5,9 +5,10 @@ import { CoursesModule } from './courses/courses.module';
 import { Videos } from './videos';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [CoursesModule, UsersModule, TypeOrmModule.forRoot()],
+  imports: [CoursesModule, UsersModule, TypeOrmModule.forRoot(), AuthModule],
   controllers: [AppController],
   providers: [AppService, Videos],
 })
