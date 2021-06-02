@@ -19,7 +19,8 @@ export class UsersService {
 
   create(user: CreateUserDto): Promise<User> {
     // this.usersRepository.save();
-    const { password } = user;
+    const { password, email } = user;
+    user.username = email;
     user.password = bcrypt.hashSync(password, bcryptConstants.saltOrRounds);
     return this.usersRepository.save(user);
   }
