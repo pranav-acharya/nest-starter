@@ -11,5 +11,5 @@ export class CreateUserDto {
     @IsNotEmpty()
     readonly firstName: string;
 
-    readonly lastName: string;
+    readonly lastName?: string;
 }
